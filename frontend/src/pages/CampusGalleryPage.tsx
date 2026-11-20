@@ -8,6 +8,11 @@ export const CampusGalleryPage: React.FC = () => {
 
   const photos = [
     {
+      title: 'Basaveshwar Engineering College Main Administrative & Academic Quadrangle',
+      tag: 'Campus Architecture',
+      image: '/college-campus.jpg',
+    },
+    {
       title: 'Central University Quadrangle & Academic Hub',
       tag: 'Campus Architecture',
       image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1000',
@@ -54,7 +59,7 @@ export const CampusGalleryPage: React.FC = () => {
   const filtered = selectedTag === 'ALL' ? photos : photos.filter((p) => p.tag === selectedTag);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-10">
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <Badge variant="primary">Campus Life in Frames</Badge>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">

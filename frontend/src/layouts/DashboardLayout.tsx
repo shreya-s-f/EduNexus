@@ -10,7 +10,6 @@ import {
   Briefcase,
   FileText,
   AlertCircle,
-  MessageSquare,
   Sparkles,
   LogOut,
   Sun,
@@ -18,9 +17,6 @@ import {
   Menu,
   X,
   User as UserIcon,
-  Search,
-  Bell,
-  MapPin,
   Compass,
   Bus,
   BedDouble,
@@ -64,7 +60,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
         { label: 'Mark Attendance', href: '/student/attendance', icon: Award },
         { label: 'Assignments', href: '/assignments', icon: FileText },
         { label: 'Class Timetable', href: '/timetable', icon: Clock },
-        { label: 'Notices', href: '/notices', icon: Bell },
+        { label: 'Notices', href: '/notices', icon: FileText },
         { label: 'Campus AI', href: '/ai-assistant', icon: Sparkles },
       ];
     }
@@ -102,31 +98,35 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex transition-colors">
+    <div className="min-h-screen bg-slate-50 dark:bg-black text-slate-900 dark:text-slate-100 flex transition-colors">
       {/* Mobile Sidebar Backdrop */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-slate-950/60 lg:hidden backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/70 lg:hidden backdrop-blur-sm"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - Pure White in Light, Pure Black in Dark */}
       <aside
-        className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 bg-white dark:bg-slate-900 border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 bg-white dark:bg-black border-r border-slate-200/90 dark:border-zinc-800/90 flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="p-5 space-y-6 overflow-y-auto">
-          {/* Logo */}
+          {/* Logo with 3D shadow and Red, Blue, Green dots */}
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-red-500 flex items-center justify-center text-white shadow-3d-red group-hover:scale-105 transition-transform">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <span className="font-extrabold text-base text-slate-900 dark:text-white">EduNexus</span>
-                <span className="block text-[9px] uppercase font-bold tracking-wider text-brand-500">
+                <span className="font-extrabold text-base text-slate-900 dark:text-white flex items-center gap-1">
+                  EduNexus
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                </span>
+                <span className="block text-[9px] uppercase font-bold tracking-wider text-red-600 dark:text-sky-400">
                   Campus Platform
                 </span>
               </div>
@@ -140,14 +140,14 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
           </div>
 
           {/* User Badge */}
-          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/60">
+          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-slate-200/80 dark:border-zinc-800">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 flex items-center justify-center font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-rose-500 text-white shadow-sm flex items-center justify-center font-bold text-sm">
                 {user?.name ? user.name.charAt(0) : 'U'}
               </div>
               <div className="overflow-hidden">
                 <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 truncate">
-                  {user?.name || 'Rahul Sharma'}
+                  {user?.name || 'Student Member'}
                 </h4>
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <Badge variant="primary" size="sm">
@@ -161,7 +161,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
 
           {/* Nav Links */}
           <nav className="space-y-1">
-            <span className="text-[10px] uppercase font-bold text-slate-400 px-3 tracking-wider">
+            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 px-3 tracking-wider">
               Navigation
             </span>
             {navItems.map((item) => {
@@ -174,8 +174,8 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
                   onClick={() => setSidebarOpen(false)}
                   className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? 'bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-300 font-bold shadow-sm'
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
+                      ? 'bg-red-50 text-red-600 dark:bg-zinc-900 dark:text-sky-400 font-bold shadow-2xs border-l-4 border-red-600 dark:border-sky-400'
+                      : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <Icon className="w-4 h-4 shrink-0" />
@@ -187,21 +187,21 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
         </div>
 
         {/* Bottom Actions */}
-        <div className="p-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+        <div className="p-4 border-t border-slate-200/80 dark:border-zinc-800 space-y-2">
           <Link
             to="/emergency"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-rose-50/80 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 text-xs font-bold"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 text-xs font-bold border border-red-200 dark:border-red-900/60"
           >
             <div className="flex items-center gap-2">
-              <ShieldAlert className="w-4 h-4 text-rose-500" />
+              <ShieldAlert className="w-4 h-4 text-red-600 animate-pulse" />
               <span>Emergency SOS</span>
             </div>
-            <span className="text-[10px] bg-rose-200 dark:bg-rose-900 px-1.5 py-0.5 rounded">24/7</span>
+            <span className="text-[10px] bg-red-200 dark:bg-red-900/80 px-1.5 py-0.5 rounded text-red-900 dark:text-red-200">24/7</span>
           </Link>
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+            className="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-red-600 hover:bg-red-50 dark:hover:bg-red-950/40 transition-colors"
           >
             <LogOut className="w-4 h-4" />
             <span>Sign Out Session</span>
@@ -212,15 +212,15 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Topbar */}
-        <header className="sticky top-0 z-30 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 px-4 sm:px-8 flex items-center justify-between">
+        <header className="sticky top-0 z-30 h-16 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800 px-4 sm:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100"
+              className="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-zinc-900"
             >
               <Menu className="w-5 h-5" />
             </button>
-            <span className="hidden sm:inline-block text-xs font-semibold text-slate-400">
+            <span className="hidden sm:inline-block text-xs font-semibold text-slate-500 dark:text-zinc-400">
               Department of {user?.department || 'Information Science & Engineering'}
             </span>
           </div>
@@ -228,30 +228,31 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
           <div className="flex items-center gap-3">
             <Link
               to="/ai-assistant"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-xs font-bold"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-50 dark:bg-zinc-900 border border-sky-300 dark:border-sky-500/40 text-sky-700 dark:text-sky-300 text-xs font-bold hover:shadow-glow-blue transition-all"
             >
-              <Sparkles className="w-3.5 h-3.5 text-purple-500" />
+              <Sparkles className="w-3.5 h-3.5 text-sky-500" />
               <span>Ask AI</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             </Link>
 
             <button
               onClick={toggleTheme}
               aria-label="Toggle Theme"
-              className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-zinc-900"
             >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-sky-400" />}
             </button>
 
-            <div className="h-6 w-px bg-slate-200 dark:bg-slate-800" />
+            <div className="h-6 w-px bg-slate-200 dark:bg-zinc-800" />
 
-            <Link to="/" className="text-xs font-semibold text-brand-600 hover:underline">
+            <Link to="/" className="text-xs font-semibold text-red-600 dark:text-sky-400 hover:underline">
               Public Portal →
             </Link>
           </div>
         </header>
 
         {/* Injected Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">{children}</main>
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 w-full">{children}</main>
       </div>
     </div>
   );

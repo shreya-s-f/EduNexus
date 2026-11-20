@@ -26,7 +26,7 @@ export const DepartmentsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-3">
         <Badge variant="primary">Academic Units</Badge>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">

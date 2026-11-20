@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'lightblue' | 'lightgreen';
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
 }
@@ -17,19 +17,30 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98]';
+    'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none active:translate-y-0.5';
 
   const variants = {
+    // Primary: Vibrant University Red with 3D elevation
     primary:
-      'bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white shadow-md shadow-brand-500/20 focus:ring-brand-500',
+      'bg-gradient-to-r from-red-600 via-rose-600 to-red-500 hover:from-red-700 hover:to-rose-700 text-white shadow-3d-red hover:shadow-glow-red focus:ring-red-500 border border-red-500/30',
+    // Secondary: Crisp White in Light, Pure Black in Dark
     secondary:
-      'bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-100 focus:ring-slate-400',
+      'bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 shadow-sm dark:bg-black dark:hover:bg-zinc-950 dark:text-white dark:border-zinc-800 hover:border-c-blue-400 dark:hover:border-c-blue-400 focus:ring-sky-400',
+    // Light Blue: Sky / Cyan 3D button
+    lightblue:
+      'bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-3d-blue hover:shadow-glow-blue focus:ring-sky-400 border border-sky-400/30',
+    // Light Green: Mint / Emerald 3D button
+    lightgreen:
+      'bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white shadow-3d-green hover:shadow-glow-green focus:ring-emerald-400 border border-emerald-400/30',
+    // Outline: Minimal border with hover tint
     outline:
-      'border border-slate-300 hover:bg-slate-50 text-slate-700 dark:border-slate-700 dark:hover:bg-slate-800 dark:text-slate-200 focus:ring-brand-500',
+      'border-2 border-slate-300 hover:border-red-500 hover:bg-red-50/50 text-slate-800 dark:border-zinc-700 dark:hover:border-sky-400 dark:hover:bg-zinc-900 dark:text-white focus:ring-red-500',
+    // Ghost
     ghost:
-      'hover:bg-slate-100 text-slate-700 dark:hover:bg-slate-800 dark:text-slate-300 focus:ring-slate-400',
+      'hover:bg-slate-100 text-slate-700 dark:hover:bg-zinc-900 dark:text-slate-200 focus:ring-slate-400',
+    // Danger
     danger:
-      'bg-rose-600 hover:bg-rose-700 text-white shadow-md shadow-rose-500/20 focus:ring-rose-500',
+      'bg-red-600 hover:bg-red-700 text-white shadow-md shadow-red-500/20 focus:ring-red-500',
   };
 
   const sizes = {

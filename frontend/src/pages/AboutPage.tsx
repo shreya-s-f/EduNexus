@@ -1,102 +1,231 @@
 import React from 'react';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
-import { ShieldCheck, Award, Target, BookOpen, Compass, CheckCircle } from 'lucide-react';
+import { Card3D } from '../components/3d/Card3D';
+import {
+  ShieldCheck,
+  Award,
+  Target,
+  BookOpen,
+  Compass,
+  CheckCircle,
+  Building2,
+  Calendar,
+  Globe,
+  MapPin,
+  Phone,
+  Mail,
+  Users,
+} from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <Badge variant="primary">Campus Heritage & Vision</Badge>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          Pioneering Future Engineering Since 1998
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-16">
+      {/* Header Banner */}
+      <div className="text-center max-w-4xl mx-auto space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900/60 text-xs font-bold text-red-600 dark:text-red-400">
+          <ShieldCheck className="w-4 h-4 text-red-500" />
+          <span>B.V.V. Sangha's Heritage • Established 1963</span>
+        </div>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Basaveshwar Engineering College (Autonomous), Bagalkote
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-300">
-          EduNexus Campus is a globally recognized autonomous institution empowering over 12,000 students
-          with world-class technical education, interdisciplinary research, and progressive campus life.
+        <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-300 leading-relaxed">
+          A premier Government-Aided Autonomous institution permanently affiliated to Visvesvaraya Technological
+          University (VTU), Belagavi, approved by AICTE, New Delhi, and accredited by NAAC with 'A' Grade (2024 to 2029).
         </p>
+
+        {/* Counseling & Accreditation Badges */}
+        <div className="flex flex-wrap justify-center items-center gap-3 pt-2">
+          <Badge variant="primary" size="md">CET Code: E031 (Aided) / E049 (Unaided)</Badge>
+          <Badge variant="blue" size="md">COMEDK: E024</Badge>
+          <Badge variant="green" size="md">NAAC 'A' Grade (2024–2029)</Badge>
+          <Badge variant="neutral" size="md">World Bank TEQIP-I, II & III</Badge>
+        </div>
       </div>
 
-      {/* Campus Hero Image */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+      {/* Featured Campus Hero Photo */}
+      <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] sm:h-[540px] w-full border border-slate-200 dark:border-zinc-800">
         <img
-          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1600"
-          alt="EduNexus University Campus"
-          className="w-full h-full object-cover"
+          src="/college-campus.jpg"
+          alt="Basaveshwar Engineering College Administrative Quadrangle"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8">
-          <div className="text-white space-y-2">
-            <span className="px-3 py-1 rounded-full bg-brand-500 text-xs font-bold uppercase">
-              120+ Acre Sustainable Green Campus
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-6 sm:p-10">
+          <div className="text-white space-y-2 max-w-3xl">
+            <span className="px-3.5 py-1 rounded-full bg-red-600 text-xs font-bold uppercase shadow-3d-red inline-block">
+              S. Nijalingappa Vidyanagar, Bagalkote
             </span>
-            <h3 className="text-2xl font-bold">Center of Excellence & Technological Research</h3>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
+              A 93-Acre Lush Green Campus of Academic Eminence
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              Serving the nation for over six decades with cutting-edge laboratories, world-class faculty,
+              and premier placement ecosystems.
+            </p>
           </div>
         </div>
+      </div>
+
+      {/* Institutional Highlights Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Card3D glowColor="red" intensity={10}>
+          <div className="p-6 text-center bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-900/60 flex items-center justify-center mx-auto mb-3 font-bold">
+              <Calendar className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-white">1963</h3>
+            <p className="text-xs text-slate-500 dark:text-zinc-400 font-semibold mt-1">Year of Establishment</p>
+          </div>
+        </Card3D>
+
+        <Card3D glowColor="blue" intensity={10}>
+          <div className="p-6 text-center bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-900/60 flex items-center justify-center mx-auto mb-3 font-bold">
+              <Building2 className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-white">93 Acres</h3>
+            <p className="text-xs text-slate-500 dark:text-zinc-400 font-semibold mt-1">Lush Green Campus</p>
+          </div>
+        </Card3D>
+
+        <Card3D glowColor="green" intensity={10}>
+          <div className="p-6 text-center bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60 flex items-center justify-center mx-auto mb-3 font-bold">
+              <Award className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-white">NAAC 'A'</h3>
+            <p className="text-xs text-slate-500 dark:text-zinc-400 font-semibold mt-1">Grade (2024–2029)</p>
+          </div>
+        </Card3D>
+
+        <Card3D glowColor="red" intensity={10}>
+          <div className="p-6 text-center bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-900/60 flex items-center justify-center mx-auto mb-3 font-bold">
+              <Globe className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 dark:text-white">TEQIP</h3>
+            <p className="text-xs text-slate-500 dark:text-zinc-400 font-semibold mt-1">World Bank Funded</p>
+          </div>
+        </Card3D>
+      </div>
+
+      {/* About B.V.V. Sangha & History */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <Card3D glowColor="none" intensity={6}>
+          <div className="p-8 bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full space-y-4">
+            <Badge variant="primary">Parent Organization</Badge>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              Shri B.V.V. Sangha, Bagalkote
+            </h3>
+            <p className="text-slate-600 dark:text-zinc-300 leading-relaxed text-sm">
+              Basaveshwar Veerashaiva Vidyavardhaka Sangha (B.V.V. Sangha) was established in 1906 by His Holiness
+              Shri Gurubasava Mahaswamiji of Bilur. Over more than a century of selfless public service, the Sangha
+              has grown into one of North Karnataka's most distinguished educational conglomerates, managing over
+              150 educational institutions ranging from primary schools to post-graduate research colleges and medical institutes.
+            </p>
+            <p className="text-slate-600 dark:text-zinc-300 leading-relaxed text-sm">
+              Under the visionary leadership of Chairman & President Shri Veeranna Charantimath, the Sangha continues
+              its noble commitment to make high-quality professional education accessible to all students across the country.
+            </p>
+          </div>
+        </Card3D>
+
+        <Card3D glowColor="blue" intensity={6}>
+          <div className="p-8 bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full space-y-4">
+            <Badge variant="blue">Autonomous Pedagogy</Badge>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              Autonomy & TEQIP Excellence
+            </h3>
+            <p className="text-slate-600 dark:text-zinc-300 leading-relaxed text-sm">
+              Basaveshwar Engineering College was conferred Autonomous status by UGC and VTU in 2007. Autonomy empowers
+              BEC to craft flexible, industry-relevant curricula, introduce modern electives like AI/ML, Cyber Security,
+              VLSI, and Cloud Computing, and conduct continuous transparent evaluations.
+            </p>
+            <p className="text-slate-600 dark:text-zinc-300 leading-relaxed text-sm">
+              BEC is among the select institutions chosen by the Government of India and the World Bank for support
+              under Technical Education Quality Improvement Programme (TEQIP Phase I, Phase II, and Phase III),
+              pumping substantial grants into state-of-the-art lab equipment, faculty research, and international symposiums.
+            </p>
+          </div>
+        </Card3D>
       </div>
 
       {/* Vision & Mission Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="p-8 space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 flex items-center justify-center">
-            <Target className="w-6 h-6" />
+        <Card3D glowColor="red" intensity={8}>
+          <div className="p-8 space-y-4 bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-900/60 flex items-center justify-center">
+              <Target className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h3>
+            <p className="text-slate-600 dark:text-zinc-300 leading-relaxed">
+              To be a premier technical institution of global repute, recognized for imparting quality engineering education,
+              fostering scientific inquiry, nurturing ethical values, and empowering graduates to excel in global engineering practice.
+            </p>
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Our Vision</h3>
-          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-            To emerge as a premier global technological university renowned for high-impact innovation,
-            ethical leadership, sustainable problem solving, and shaping graduates who lead transformative
-            change in society.
-          </p>
-        </Card>
+        </Card3D>
 
-        <Card className="p-8 space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 flex items-center justify-center">
-            <Compass className="w-6 h-6" />
+        <Card3D glowColor="green" intensity={8}>
+          <div className="p-8 space-y-4 bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-zinc-800 h-full">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60 flex items-center justify-center">
+              <Compass className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h3>
+            <ul className="space-y-3 text-slate-600 dark:text-zinc-300 text-sm">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                <span>Deliver student-centric, outcome-based engineering education with modern digital pedagogies.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                <span>Establish advanced R&D centers, incubation clusters (BEC-STEP), and strong industry collaborations.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                <span>Inculcate professional ethics, leadership qualities, entrepreneurial spirit, and social responsibility.</span>
+              </li>
+            </ul>
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Our Mission</h3>
-          <ul className="space-y-3 text-slate-600 dark:text-slate-300">
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
-              <span>Deliver contemporary industry-aligned engineering curricula and hands-on lab training.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
-              <span>Foster interdisciplinary collaborative research with top technology enterprises.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
-              <span>Promote an inclusive environment that values social responsibility and lifelong learning.</span>
-            </li>
-          </ul>
-        </Card>
+        </Card3D>
       </div>
 
-      {/* Key Accreditations */}
-      <div className="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-        <div className="text-center max-w-xl mx-auto mb-8">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Accreditations & Recognitions</h3>
-          <p className="text-sm text-slate-500 mt-1">Certified to the highest standards of academic excellence</p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 shadow-soft">
-            <ShieldCheck className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
-            <h4 className="font-extrabold text-lg text-slate-900 dark:text-slate-100">NAAC A++</h4>
-            <p className="text-xs text-slate-500">Highest CGPA of 3.82 / 4.0</p>
+      {/* Official Contact & Helplines from becbgk.edu */}
+      <div className="p-8 rounded-3xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+          Official Institutional Helplines & Location
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+            <div>
+              <h4 className="font-bold text-slate-900 dark:text-white">Postal Address</h4>
+              <p className="text-slate-600 dark:text-zinc-400 text-xs mt-1">
+                Basaveshwar Engineering College, S. Nijalingappa Vidyanagar, Bagalkote - 587 102, Karnataka, India
+              </p>
+            </div>
           </div>
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 shadow-soft">
-            <Award className="w-8 h-8 text-brand-500 mx-auto mb-2" />
-            <h4 className="font-extrabold text-lg text-slate-900 dark:text-slate-100">NIRF Top 50</h4>
-            <p className="text-xs text-slate-500">Ministry of Education, GoI</p>
+
+          <div className="flex items-start gap-3">
+            <Phone className="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+            <div>
+              <h4 className="font-bold text-slate-900 dark:text-white">Telephones</h4>
+              <p className="text-slate-600 dark:text-zinc-400 text-xs mt-1">
+                +91-76187-81963<br />
+                08354-234060 / 234204
+              </p>
+            </div>
           </div>
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 shadow-soft">
-            <BookOpen className="w-8 h-8 text-purple-500 mx-auto mb-2" />
-            <h4 className="font-extrabold text-lg text-slate-900 dark:text-slate-100">NBA Accredited</h4>
-            <p className="text-xs text-slate-500">All 6 Core Programs</p>
-          </div>
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 shadow-soft">
-            <Target className="w-8 h-8 text-amber-500 mx-auto mb-2" />
-            <h4 className="font-extrabold text-lg text-slate-900 dark:text-slate-100">AICTE Approved</h4>
-            <p className="text-xs text-slate-500">Autonomous Status</p>
+
+          <div className="flex items-start gap-3">
+            <Mail className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+            <div>
+              <h4 className="font-bold text-slate-900 dark:text-white">Email Addresses</h4>
+              <p className="text-slate-600 dark:text-zinc-400 text-xs mt-1">
+                becprincipal@yahoo.com<br />
+                principal@becbgk.edu
+              </p>
+            </div>
           </div>
         </div>
       </div>

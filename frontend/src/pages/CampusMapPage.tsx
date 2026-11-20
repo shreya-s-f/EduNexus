@@ -49,7 +49,7 @@ export const CampusMapPage: React.FC = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-8">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <Badge variant="primary">Campus Geospatial Directory</Badge>

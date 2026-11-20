@@ -27,7 +27,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-12">
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <Badge variant="primary">Get In Touch</Badge>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -43,15 +43,19 @@ export const ContactPage: React.FC = () => {
         <div className="space-y-6">
           <Card className="p-6 space-y-3">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-2xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 shrink-0">
+              <div className="p-3 rounded-2xl bg-red-50 dark:bg-red-950/60 text-red-600 shrink-0">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="font-bold text-base text-slate-900 dark:text-slate-100">Campus Address</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-                  EduNexus Institute of Technology, Innovation Boulevard, Knowledge City, Outer Ring Road,
-                  Bengaluru, Karnataka 560103, India.
+                  B.V.V. Sangha's Basaveshwar Engineering College (Autonomous),<br />
+                  S. Nijalingappa Vidyanagar, Bagalkote - 587 102, Karnataka, India.
                 </p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <Badge variant="primary" size="sm">CET: E031 / E049</Badge>
+                  <Badge variant="blue" size="sm">COMEDK: E024</Badge>
+                </div>
               </div>
             </div>
           </Card>
@@ -64,10 +68,10 @@ export const ContactPage: React.FC = () => {
               <div>
                 <h3 className="font-bold text-base text-slate-900 dark:text-slate-100">Telephone Helplines</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                  Admissions: +91 80 2844 1100 / 1101
+                  Helpline Mobile: +91-76187-81963
                 </p>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Principal & Registrar: +91 80 2844 1105
+                  Principal Office: 08354-234060 / 234204
                 </p>
               </div>
             </div>
@@ -75,16 +79,16 @@ export const ContactPage: React.FC = () => {
 
           <Card className="p-6 space-y-3">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 shrink-0">
+              <div className="p-3 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-bold text-base text-slate-900 dark:text-slate-100">Email Desks</h3>
+                <h3 className="font-bold text-base text-slate-900 dark:text-slate-100">Official Email Desks</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                  General Inquiries: admissions@edunexus.edu
+                  Principal Email: becprincipal@yahoo.com
                 </p>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Placement Cell: placement@edunexus.edu
+                  Institutional Desk: principal@becbgk.edu
                 </p>
               </div>
             </div>

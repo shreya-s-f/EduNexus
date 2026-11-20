@@ -66,7 +66,7 @@ export const EmergencyPage: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-10">
       {/* Notice Banner */}
       <div className="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 text-xs sm:text-sm flex items-center gap-3">
         <AlertTriangle className="w-5 h-5 shrink-0 text-amber-600" />

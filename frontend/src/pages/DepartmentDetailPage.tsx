@@ -28,7 +28,7 @@ export const DepartmentDetailPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+      <div className="w-full px-4 sm:px-8 lg:px-12 py-20 text-center">
         <div className="w-12 h-12 border-4 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
         <p className="mt-4 text-slate-500">Loading department information...</p>
       </div>
@@ -37,7 +37,7 @@ export const DepartmentDetailPage: React.FC = () => {
 
   if (!department) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+      <div className="w-full px-4 sm:px-8 lg:px-12 py-20 text-center">
         <h2 className="text-2xl font-bold">Department Not Found</h2>
         <Link to="/departments" className="mt-4 inline-block text-brand-500">
           Return to Departments
@@ -47,7 +47,7 @@ export const DepartmentDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-12">
       <Link to="/departments">
         <Button variant="ghost" size="sm" className="gap-2">
           <ArrowLeft className="w-4 h-4" />
